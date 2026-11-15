@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Engineering portfolio of Raksheta Kulkarni, a USC student working in computer vision, embedded systems, and software.">
+<title>Raksheta Kulkarni · Engineering Portfolio</title>
+<link rel="stylesheet" href="visuals.css?v=portfolio-about-portrait">
+<body class="portfolio">
+<main>
+  <header class="portfolio-intro" id="portfolio-start" tabindex="-1">
+    <div class="portfolio-intro-copy">
+    <p class="portfolio-focus">Computer vision · Embedded systems · 3D visualization</p>
+    <h1>Raksheta Kulkarni</h1>
+    <p>Computer engineering and computer science student at USC, building with cameras, sensors, and software.</p>
+    <div class="portfolio-contact" aria-label="Résumé and contact">
+      <a class="portfolio-resume" href="media/raksheta-kulkarni-resume.pdf">Résumé</a>
+      <a href="https://github.com/RakshetaK">GitHub</a>
+      <a href="https://www.linkedin.com/in/rakshetakulkarni">LinkedIn</a>
+      <a href="mailto:raksheta@usc.edu">Email</a>
+    </div>
+    </div>
+    <figure class="portfolio-hero-model">
+      <div class="portfolio-device">
+        <div class="portfolio-device-depth" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="portfolio-menu" role="tablist" aria-label="Portfolio sections" aria-orientation="vertical">
+          <button type="button" role="tab" id="tab-about" aria-controls="about" aria-selected="true">About me</button>
+          <button type="button" role="tab" id="tab-projects" aria-controls="projects" aria-selected="false" tabindex="-1">Featured Projects</button>
+          <button type="button" role="tab" id="tab-skills" aria-controls="skills" aria-selected="false" tabindex="-1">Skills</button>
+          <button type="button" role="tab" id="tab-experience" aria-controls="experience" aria-selected="false" tabindex="-1">Experience</button>
+          <button type="button" role="tab" id="tab-awards" aria-controls="awards" aria-selected="false" tabindex="-1">Awards</button>
+        </div>
+        <div class="portfolio-wheel" role="group" aria-label="Section controls" aria-describedby="portfolio-wheel-hint">
+          <button type="button" data-section-step="-1" aria-label="Previous section">◀</button>
+          <button type="button" id="portfolio-open" aria-label="Go to selected section"></button>
+          <button type="button" data-section-step="1" aria-label="Next section">▶</button>
+        </div>
+      </div>
+      <figcaption class="portfolio-wheel-hint" id="portfolio-wheel-hint"><span aria-hidden="true">↻</span> Drag the ring to turn</figcaption>
+    </figure>
+  </header>
+  <section id="about" class="portfolio-panel" role="tabpanel" aria-labelledby="tab-about" tabindex="-1">
+    <h2>About me</h2>
+    <div class="portfolio-about">
+      <img src="media/raksheta-kulkarni-portrait.jpg" alt="Portrait of Raksheta Kulkarni" decoding="async">
+      <div class="portfolio-about-copy">
+        <p>I love the moment a prototype starts responding to the world around it.</p>
+        <p>At USC, I study computer engineering and computer science, focusing on embedded systems and minoring in product design. Robotics, computer vision, and machine learning let me work across the parts I enjoy most, from testing on real hardware to figuring out what the experience should feel like.</p>
+        <p>For <a href="magic-mirror.html">Magic Mirror</a>, that meant turning camera input into a 3D garment that follows someone’s movements. Outside engineering, I enjoy portrait art and design. I bring that same attention to light, movement, and expression to the interfaces I build.</p>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="portfolio-panel" role="tabpanel" aria-labelledby="tab-projects" tabindex="-1">
+    <h2>Featured Projects</h2>
+    <div class="portfolio-project-preview">
+        <a class="portfolio-device-screen" href="magic-mirror.html" aria-label="Explore the Magic Mirror interactive demo">
+          <p class="portfolio-model-status">Loading 3D model…</p>
+          <canvas id="portfolio-mirror" width="640" height="640" aria-hidden="true" hidden></canvas>
+          <span>Magic Mirror <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="portfolio-device-screen" href="fifo.html" aria-label="Explore the FIFO Smart Fridge interactive demo">
+          <p class="portfolio-model-status">Loading 3D model…</p>
+          <canvas id="portfolio-fifo" width="640" height="640" aria-hidden="true" hidden></canvas>
+          <span>FIFO Smart Fridge <span aria-hidden="true">↗</span></span>
+        </a>
+    </div>
+  </section>
+  <section id="skills" class="portfolio-panel" role="tabpanel" aria-labelledby="tab-skills" tabindex="-1">
+    <h2>Skills</h2>
+    <dl class="portfolio-skills">
+      <div><dt>Languages</dt><dd>C++, Python, C#, Java, Kotlin, TypeScript, JavaScript</dd></div>
+      <div><dt>Computer vision and machine learning</dt><dd>OpenCV, Detectron2, PyTorch, TensorFlow</dd></div>
+      <div><dt>Web</dt><dd>React, Next.js, Tailwind CSS, HTML, CSS</dd></div>
+      <div><dt>Robotics and algorithms</dt><dd>Hungarian algorithm, Vicon, NVIDIA Jetson</dd></div>
+      <div><dt>Tools</dt><dd>Git, GitHub, Docker, Linux, MATLAB, Figma, SOLIDWORKS (Certified Associate)</dd></div>
+    </dl>
+  </section>
+  <section id="experience" class="portfolio-panel" role="tabpanel" aria-labelledby="tab-experience" tabindex="-1">
+    <h2>Experience</h2>
+    <section class="portfolio-experience-group">
+      <h3>Technical Experience</h3>
+      <div class="portfolio-entries">
+        <article><p class="portfolio-meta">Premier Nationwide Security · Software Development Intern</p><h4>Security operations platform</h4><p>Designing a responsive platform for guards, office staff, and clients, including GPS-based check-ins, incident reporting, payroll, and billing.</p></article>
+        <article><p class="portfolio-meta">USC Autonomous Networks Research Group · Undergraduate Researcher</p><h4>Error correction for correlated noise</h4><p>Studying GRAND and GRANDAB decoding under burst errors, including how interleaving and adaptive noise guessing affect decoding performance.</p></article>
+        <article><p class="portfolio-meta">USC FLS Lab · Undergraduate Researcher</p><h4>Multi-agent formation transitions</h4><p>Developed a two-pass Hungarian assignment algorithm to reduce travel distance during drone formation changes while respecting device, orientation, and spatial constraints. Validated the approach on physical hardware with Vicon motion capture.</p></article>
+      </div>
+    </section>
+    <section class="portfolio-experience-group">
+      <h3>Leadership</h3>
+      <div class="portfolio-entries">
+        <article><p class="portfolio-meta">USC Makers · Technical Operations Manager</p><h4>Workshop inventory app</h4><p>Organized 200+ components across 60 labeled bins and built a Kotlin Android app with Room and keyword search to help members find parts.</p></article>
+        <article><p class="portfolio-meta">USC Makers · Project Manager</p><h4><a href="fifo.html">FIFO Smart Fridge</a></h4><p>Led a six-person team and integrated a motorized scanning carriage, a vision-language pipeline, and an inventory app.</p></article>
+        <article><p class="portfolio-meta">USC Makers · Software Lead</p><h4><a href="magic-mirror.html">Magic Mirror</a></h4><p>Built the pose-tracking pipeline with MediaPipe, Flask, and Unity, including the joint transformations and smoothing that drove the 3D garment visualization.</p></article>
+      </div>
+    </section>
+    <section class="portfolio-experience-group">
+      <h3>Competitions</h3>
+      <div class="portfolio-entries">
+        <article><p class="portfolio-meta">Kode With Klossy × Goldman Sachs</p><h4>Predatory lending detection</h4><p>Compared three classifiers across mortgage data from eight states and evaluated precision, recall, and fairness tradeoffs.</p></article>
+        <article><p class="portfolio-meta">Good Vibes Only AI/ML Hackathon · Hardware Division Winner</p><h4>Vyz adaptive wearable</h4><p>Built a Jetson-powered prototype and programmed light-responsive sunglasses and real-time audio filtering for sensory overstimulation.</p></article>
+      </div>
+    </section>
+  </section>
+  <section id="awards" class="portfolio-panel" role="tabpanel" aria-labelledby="tab-awards" tabindex="-1">
+    <h2>Awards</h2>
+    <ul class="portfolio-awards">
+      <li><span class="portfolio-award-year">2025</span><div><strong>Hardware Division Winner</strong><p>Good Vibes Only AI/ML Hackathon</p></div></li>
+      <li><span class="portfolio-award-year">2025</span><div><strong>Challenge Finalist</strong><p>Kode With Klossy × BWDC Challenge</p></div></li>
+      <li><span class="portfolio-award-year">2024</span><div><strong>National Champion</strong><p>StellarXplorers</p></div></li>
+      <li><span class="portfolio-award-year">2024–25</span><div><strong>Dean’s List</strong><p>USC Viterbi</p></div></li>
+      <li><span class="portfolio-award-year">2023</span><div><strong>Top 5 Finalist</strong><p>Estée Lauder Coding Challenge</p></div></li>
+    </ul>
+  </section>
+</main>
+<script src="portfolio-menu.js?v=click-wheel" defer></script>
+<script type="module" src="portfolio-hero.js?v=model-loading"></script>
+</body>
+</html>

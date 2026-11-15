@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIFO Smart Fridge · Interactive visual</title>
+<link rel="stylesheet" href="visuals.css?v=fifo-system-demos">
+<body class="fifo">
+<main>
+  <nav class="project-nav" aria-label="Project navigation"><a href="./">Home</a><a href="magic-mirror.html">Magic Mirror ↗</a></nav>
+  <section class="fifo-hero" aria-labelledby="fifo-title">
+    <header><h1 id="fifo-title">FIFO Smart Fridge</h1><p>Try the inventory workflow, from adding groceries to scanning the shelf after the door closes.</p></header>
+    <figure class="fifo-model">
+      <div class="fifo-model-stage">
+        <canvas id="fifo-model" width="720" height="720" aria-label="3D reconstruction of the pink FIFO fridge with its door mounted tablet" hidden></canvas>
+        <div class="fifo-scan-bubble" hidden>
+          <canvas id="fifo-scan-preview" width="512" height="320" role="img" aria-label="Close-up of the linear scanner carriage"></canvas>
+          <span>Linear scan · Close-up</span>
+        </div>
+      </div>
+      <figcaption id="fifo-model-status" role="status">Loading the 3D fridge…</figcaption>
+      <div class="controls fifo-model-controls" role="group" aria-label="Fridge model controls" hidden>
+        <button type="button" id="fifo-turn-left" aria-label="Turn fridge left" title="Turn fridge left">←</button>
+        <button type="button" id="fifo-door" aria-pressed="false">Open door</button>
+        <button type="button" id="fifo-turn-right" aria-label="Turn fridge right" title="Turn fridge right">→</button>
+        <button type="button" id="fifo-spin" aria-pressed="false">Auto rotate</button>
+      </div>
+    </figure>
+    <section class="fifo-demo" aria-label="FIFO tablet simulation">
+    <div class="fifo-tools controls">
+      <button id="grocery-batch" type="button" draggable="true"><span aria-hidden="true" class="grocery-bag"><i></i><i></i><i></i></span><span><strong>Add sample groceries</strong><small>Click or drag onto the fridge or tablet</small></span><span class="fifo-add-mark" aria-hidden="true">+</span></button>
+    </div>
+    <div class="fifo-tablet">
+      <div class="fifo-bar">
+        <strong>My Fridge</strong>
+        <div class="controls" aria-label="Tablet views">
+          <button data-view="inventory" aria-pressed="true">Inventory</button>
+          <button data-view="game" aria-pressed="false">Game overview</button>
+        </div>
+      </div>
+      <div id="inventory-view" class="fifo-screen"><ul id="inventory-items" class="fifo-items" aria-label="Fridge inventory"></ul></div>
+      <div id="game-view" class="fifo-screen fifo-game" hidden>
+        <div class="fifo-profile">
+          <div class="fifo-today"><strong>Today</strong><span>10/11</span></div>
+          <div class="fifo-mascot"><img src="media/fifo-mascot.png" alt="FIFO turtle mascot"><span>Rak</span></div>
+          <div class="fifo-streak"><strong>3 day streak!</strong><p>A good start!</p><div class="fifo-days" aria-label="Two checked streak marks"><span>✓</span><span>✓</span><span></span><span></span><span></span><span></span></div><small>Best streak · 3</small></div>
+        </div>
+        <div class="fifo-overview"><h2>Overview</h2><h3>Next up</h3><ul id="upcoming-items" aria-label="Items with expiration dates"></ul></div>
+      </div>
+      <p class="fifo-status" id="fifo-status" role="status">Add a sample batch to update the inventory.</p>
+    </div>
+    </section>
+  </section>
+  <section class="fifo-pipeline" aria-labelledby="fifo-stages">
+    <h2 id="fifo-stages">Pipeline stages</h2>
+    <div class="controls fifo-flow-controls" role="group" aria-label="Inventory workflow">
+      <button type="button" data-flow="add" aria-pressed="true">Add items</button>
+      <button type="button" data-flow="remove" aria-pressed="false">Remove items</button>
+    </div>
+    <nav class="steps" aria-labelledby="fifo-stages"></nav>
+    <div class="fifo-stage-detail">
+      <div aria-live="polite"><h2 id="step-title"></h2><p id="step-detail"></p></div>
+    </div>
+  </section>
+  <details class="fifo-footage">
+    <summary>See the real system</summary>
+    <div class="footage">
+      <figure><video controls playsinline preload="none" poster="media/fifo-model.jpg" src="media/fifo-visualizer.mp4"></video><figcaption>Original FIFO 3D model walkthrough</figcaption></figure>
+      <figure><video controls playsinline preload="none" poster="media/fifo-scanner.jpg" src="media/fifo-scanner.mp4"></video><figcaption>Physical scanning carriage traveling inside the fridge</figcaption></figure>
+      <figure>
+        <video controls muted playsinline preload="metadata" src="media/fifo-system-demo-1.mp4" aria-label="Adding items to FIFO"></video>
+        <figcaption>Adding items</figcaption>
+      </figure>
+      <figure>
+        <video controls muted playsinline preload="metadata" src="media/fifo-system-demo-2.mp4" aria-label="Removing items from FIFO"></video>
+        <figcaption>Removing items</figcaption>
+      </figure>
+    </div>
+  </details>
+  <dl class="facts">
+    <div><dt>Technology</dt><dd>Barcode reading, ultrasonic sensing, MQTT, Raspberry Pi, stepper-driven scanning, panoramic stitching, Detectron2, PaLI-Gemma, and an inventory database.</dd></div>
+    <div><dt>My role</dt><dd>Led a six-person USC Makers team and managed a $600 budget to build the smart fridge retrofit. Developed the removal pipeline using Detectron2 to locate containers and PaLI-Gemma to read labels and identify products. Integrated the stepper-driven scanner with the inventory database and tablet app, and debugged synchronization between the hardware and software.</dd></div>
+    <div><dt>Project outcome</dt><dd>A fridge prototype with a linear scanning mechanism and a tablet interface for inventory and the game overview.</dd></div>
+  </dl>
+</main>
+<script type="module" src="fifo.js?v=local-3d"></script>
+</body>
+</html>
